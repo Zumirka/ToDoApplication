@@ -1,0 +1,21 @@
+<resources>
+    <string name="appName">Aplikacja TODO</string>
+    <string name="create">Dodaj</string>
+    <string name="cancel">Anuluj</string>
+    <string name="newTitle">Nowa lista:</string>
+    <string name="newTask">Nowe zadanie:</string>
+    <string name="notInserted">Nie udało się dodać elementu</string>
+    <string name="edit"> Edytuj</string>
+    <string name="acceptEdit">OK</string>
+    <string name="delete"> Usuń</string>
+    <string name="done">Zrobione</string>
+    <string name="notDone"> Nie zrobione</string>
+    <string name="addTitle">Dodano listę</string>
+    <string name="empty">Pole nie może być puste</string>
+    <string name="save">Zapisz do pliku</string>
+    <string name="close"> Zamknij aplikację</string>
+    <string name="closeApp">Aplikacja została zamknięta</string>
+    <string name="saveFile">Dane zostały zapisane w folderze Download</string>
+    <string name="appNameToFile">AplikacjaTODO</string>
+    <string name="permissionDenied">Brak zezwolenia na dostęp. \n Nie zapisano pliku.</string>
+</resources>
