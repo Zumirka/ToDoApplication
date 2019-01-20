@@ -65,7 +65,6 @@ public class NewTaskActivity extends TaskActivity {
         {
             taskEditText.setError(this.getString(R.string.empty));
             taskEditText.setText("");
-            return;
         }
         else
         {
@@ -100,15 +99,6 @@ public class NewTaskActivity extends TaskActivity {
         finish();
     }
 
-    public void checkbooxChangeStatus(View v)
-    {
-        boolean checked=checkStatus.isChecked();
-        if(checked)
-            checkStatus.setText(getText(R.string.done));
-        else
-            checkStatus.setText(getText(R.string.notDone));
-    }
-
 
     public boolean onSupportNavigateUp() {
         onBackPressed();
@@ -122,11 +112,7 @@ public class NewTaskActivity extends TaskActivity {
                 s = true;
                 checkStatus.setText(getText(R.string.done));
             }
-            else
-                {
-                s = false;
-                checkStatus.setText(getText(R.string.notDone));
-                }
+
         }
     }
 
