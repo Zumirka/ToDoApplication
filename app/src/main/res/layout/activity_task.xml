@@ -11,7 +11,7 @@
         android:id="@+id/recyclerViewTask"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginBottom="60dp"
         tools:layout_editor_absoluteY="0dp">
 
     </android.support.v7.widget.RecyclerView>
@@ -20,19 +20,19 @@
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteY="0dp">
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/floatingActionBTNtask"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|right"
             android:layout_margin="@dimen/fab_margin"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="1dp"
             android:onClick="floatingBTNTaskOnClick"
             android:src="@drawable/floating_plus_btn"
-            app:backgroundTint="@color/colorAccent"
+            app:backgroundTint="@color/colorPrimary"
             app:fabSize="normal" />
 
     </android.support.design.widget.CoordinatorLayout>
