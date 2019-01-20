@@ -1,5 +1,5 @@
 <resources>
-    <string name="appName">Aplikacja TODO</string>
+    <string name="appName">TODO</string>
     <string name="create">Dodaj</string>
     <string name="cancel">Anuluj</string>
     <string name="newTitle">Nowa lista:</string>
@@ -16,6 +16,6 @@
     <string name="close"> Zamknij aplikację</string>
     <string name="closeApp">Aplikacja została zamknięta</string>
     <string name="saveFile">Dane zostały zapisane w folderze Download</string>
-    <string name="appNameToFile">AplikacjaTODO</string>
+    <string name="appNameToFile">TODO</string>
     <string name="permissionDenied">Brak zezwolenia na dostęp. \n Nie zapisano pliku.</string>
 </resources>
