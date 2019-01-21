@@ -3,8 +3,6 @@ package com.example.zumirka.todoapplication.Activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -22,10 +20,6 @@ import com.example.zumirka.todoapplication.R;
 import com.example.zumirka.todoapplication.Utility.DataBaseSQLite;
 import com.example.zumirka.todoapplication.Utility.MyAdapterMain;
 import com.example.zumirka.todoapplication.Utility.SaveFile;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 
@@ -88,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.closeApp:
                 Toast.makeText(MainActivity.this,this.getString(R.string.closeApp),Toast.LENGTH_LONG).show();
-                this.finishAffinity();
+                this.finish();
+                System.exit(0);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -132,24 +132,24 @@ public class MyAdapterMain extends
 
     public void alertAndDelete(final int titleID, String titleName) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mCtx);
-        alertDialogBuilder.setMessage("Czy na pewno chcesz usuąć listę o nazwie " + titleName + "?");
-        alertDialogBuilder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setMessage(mCtx.getString(R.string.deleteTitle)+" "+ titleName + "?");
+        alertDialogBuilder.setPositiveButton(mCtx.getString(R.string.yes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 db = new DataBaseSQLite(mCtx);
                 int result = db.deleteTitle(titleID);
                 if (result > 0) {
                     refreshList();
                     db.close();
-                    Toast.makeText(mCtx, "Usunięto", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mCtx, mCtx.getString(R.string.isDelete), Toast.LENGTH_LONG).show();
                 } else
                     {
                         db.close();
-                        Toast.makeText(mCtx, "Usuwanie nie powiodło się", Toast.LENGTH_LONG).show();
+                        Toast.makeText(mCtx, mCtx.getString(R.string.notDelete), Toast.LENGTH_LONG).show();
                     }
             }
 
         });
-        alertDialogBuilder.setNegativeButton("Nie",new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setNegativeButton(mCtx.getString(R.string.no),new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,int id) {
                 dialog.cancel();
             }

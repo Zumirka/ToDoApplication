@@ -92,14 +92,7 @@ public class MyAdapterTask extends
                 popMenu.show();
             }
         });
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setCheckBoxChange(item);
-                holder.checkBoxTask.setChecked(item.getTaskStatus());
 
-            }
-        });
     }
 
     public void setCheckBoxChange(Task item)
@@ -138,26 +131,26 @@ public class MyAdapterTask extends
     public void alertAndDelete( final int taskID, String taskName, final int titleID)
     {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mCtx);
-        alertDialogBuilder.setMessage("Czy na pewno chcesz usuąć zadanie o treści " + taskName + "?");
-        alertDialogBuilder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setMessage(mCtx.getString(R.string.deleteTask) +""+ taskName + "?");
+        alertDialogBuilder.setPositiveButton(mCtx.getString(R.string.yes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 db = new DataBaseSQLite(mCtx);
                 int result = db.deleteTask(taskID);
                 if (result > 0) {
                     refreshList(titleID);
                     db.close();
-                    Toast.makeText(mCtx, "Usunięto", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mCtx, mCtx.getString(R.string.isDelete), Toast.LENGTH_LONG).show();
 
                 } else
                     {
                         db.close();
-                        Toast.makeText(mCtx, "Usuwanie nie powiodło się", Toast.LENGTH_LONG).show();
+                        Toast.makeText(mCtx, mCtx.getString(R.string.notDelete), Toast.LENGTH_LONG).show();
                     }
 
             }
 
         });
-        alertDialogBuilder.setNegativeButton("Nie",new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setNegativeButton(mCtx.getString(R.string.no),new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,int id) {
                 dialog.cancel();
             }

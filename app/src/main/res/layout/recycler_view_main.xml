@@ -44,6 +44,8 @@
             android:layout_marginTop="92dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="2dp"
+            android:scaleY="1.4"
+            android:scaleX="1.4"
             android:text="&#8942;"
             android:textAppearance="?android:textAppearanceLarge" />
 

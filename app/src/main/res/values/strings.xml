@@ -17,5 +17,11 @@
     <string name="closeApp">Aplikacja została zamknięta</string>
     <string name="saveFile">Dane zostały zapisane w folderze Download</string>
     <string name="appNameToFile">TODO</string>
-    <string name="permissionDenied">Brak zezwolenia na dostęp. \n Nie zapisano pliku.</string>
+    <string name="permissionDenied">Brak zezwolenia na dostęp. \n Nie zapisano pliku</string>
+    <string name="deleteTitle">Czy na pewno chcesz usunąć listę o nazwie </string>
+    <string name="deleteTask">Czy na pewno chcesz usunąć zadanie o treści </string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="isDelete">Usunięte</string>
+    <string name="notDelete">Usuwanie nie powiodło się</string>
 </resources>
