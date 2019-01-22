@@ -37,7 +37,7 @@ public class TaskActivity extends AppCompatActivity {
         Cursor res=db.getTitle(titleID);
         if (res.getCount() > 0) {
             while (res.moveToNext()) {
-                setTitle(res.getString(1));
+                setTitle(this.getString(R.string.taskTitle)+" "+res.getString(1));
             }
         }
         db.close();

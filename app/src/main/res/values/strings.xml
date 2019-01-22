@@ -24,4 +24,6 @@
     <string name="no">Nie</string>
     <string name="isDelete">Usunięte</string>
     <string name="notDelete">Usuwanie nie powiodło się</string>
+    <string name="mainTitle">Twoje listy:</string>
+    <string name="taskTitle">Lista: </string>
 </resources>

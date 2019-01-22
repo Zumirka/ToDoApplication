@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mRecyclerView = findViewById(R.id.recyclerViewMain);
         floatingActionBTN = findViewById(R.id.floatingActionBTN);
+        setTitle(this.getString(R.string.mainTitle));
         createAndRefreshScreen();
 
     }
