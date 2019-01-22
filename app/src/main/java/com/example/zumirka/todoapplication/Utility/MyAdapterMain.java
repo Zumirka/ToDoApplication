@@ -51,7 +51,6 @@ public class MyAdapterMain extends
         TextView title = holder.textViewTitleName;
         title.setText(item.getTitleName());
         TextView count = holder.textViewCounter;
-        count.setText(String.valueOf(item.gettitleID()));
         int[] res = getCountOfTasksFromTitle(item.gettitleID());
         ProgressBar bar = holder.progress;
         bar.setMax(res[0]);
@@ -69,6 +68,7 @@ public class MyAdapterMain extends
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         switch (menuItem.getItemId()) {
                             case R.id.editMenu:
+                                // otwiera okno edycji tytułu. Wysyła tam ID Taska żeby było wiadomo który chcemy edytować w bazie
                                 Intent intent = new Intent(mCtx,NewTitleActivity.class);
                                 intent.putExtra("TitleID", item.gettitleID());
                                 mCtx.startActivity(intent);
@@ -97,7 +97,7 @@ public class MyAdapterMain extends
     public int[] getCountOfTasksFromTitle(int titleID) {
         int[] count = new int[2];
         DataBaseSQLite db = new DataBaseSQLite(mCtx);
-        Cursor result = db.getcountOfTasksFromTitle(titleID);
+        Cursor result = db.getCountOfTasksFromTitle(titleID);
         if (result.getCount() > 0) {
             while (result.moveToNext()) {
                 count[0] = result.getInt(0);

@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         floatingActionBTN = findViewById(R.id.floatingActionBTN);
         setTitle(this.getString(R.string.mainTitle));
         createAndRefreshScreen();
-
     }
 
     public void createAndRefreshScreen()
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter.notifyDataSetChanged();
     }
+
     public void floatingBTNOnClick (View v)
     {
         Intent intent= new Intent(MainActivity.this, NewTitleActivity.class);
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         } else
             {
             Toast.makeText(getApplicationContext(), this.getString(R.string.permissionDenied), Toast.LENGTH_SHORT).show();
-        }
+    }
     }
 
 

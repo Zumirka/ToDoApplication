@@ -27,11 +27,12 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
     public static final String COL_14="Status";
 
     // kreowanie tabeli 1
-    public static final String table_1_create="CREATE TABLE " + TABLE_NAME + "(" + COL_1 + " INTEGER PRIMARY KEY autoincrement NOT NULL,"+ COL_2+ " TEXT NOT NULL)";
+    public static final String table_1_create="CREATE TABLE " + TABLE_NAME + "(" + COL_1 + " INTEGER PRIMARY KEY autoincrement NOT NULL,"
+            + COL_2+ " TEXT NOT NULL)";
 
     //kreowanie tabeli 2
     public static final String table_2_create="CREATE TABLE " + TABLE_NAME2 +" (" + COL_11+" integer PRIMARY KEY autoincrement NOT NULL,"
-            +COL_13+ " TEXT,"+COL_14+ " integer NOT NULL DEFAULT 0,"
+            +COL_13+ " TEXT NOT NULL,"+COL_14+ " integer NOT NULL DEFAULT 0,"
             +COL_12 +" integer NOT NULL,"
             + " FOREIGN KEY("+ COL_12 +") REFERENCES "+TABLE_NAME+"("+ COL_1+ "))";
 
@@ -40,7 +41,6 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
     // konstruktor
     public DataBaseSQLite(Context context) {
         super(context, DATABASE_NAME,null, 1);
-
     }
 
     //metody bazowe
@@ -52,6 +52,7 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
 
     }
 
+    // IF exsists drop table -> odinstalujesz apke to baza też sie usunie. Jak zainstalujesz na nowo to usunie pozostałość
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS  " + TABLE_NAME );
@@ -119,7 +120,7 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
         contentValues.put(COL_14, taskStatus);
         long result= sqLiteDatabase.update(TABLE_NAME2, contentValues,"ID= ?",new String[] {String.valueOf(taskID)});
         if(result==-1)
-        return false;
+            return false;
         else
             return true;
     }
@@ -170,7 +171,7 @@ public class DataBaseSQLite extends SQLiteOpenHelper {
     }
 
 
-    public Cursor getcountOfTasksFromTitle(int titleID)
+    public Cursor getCountOfTasksFromTitle(int titleID)
     {
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
         Cursor res=sqLiteDatabase.rawQuery("SELECT COUNT(*)AS count, SUM(CASE WHEN " +COL_14+ "=1 THEN 1 ELSE 0 END) AS done" +
